@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: GalkinViacheslav
+      changes:
+        - createTable:
+            tableName: socks
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: color
+                  type: character varying(255)
+              - column:
+                  name: cotton_part
+                  type: bigint
+              - column:
+                  name: quantity
+                  type: bigint
