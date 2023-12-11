@@ -10,16 +10,19 @@ import ru.socksPro.pojo.Socks;
 public interface SocksRepository extends JpaRepository<Socks, Long> {
 
     Socks findByColorAndCottonPart(String color, Long cottonPart);
+
     @Query("select quantity" +
             " from Socks" +
             " where color = :color" +
             " and cottonPart = :cottonPart")
     Long getQuantityByColorAndCottonPartEqualsThen(@Param("color") String color, @Param("cottonPart") Long cottonPart);
+
     @Query("select sum(quantity)" +
             " from Socks" +
             " where color = :color " +
             "and cottonPart > :cottonPart")
     Long getQuantityByColorAndCottonPartMoreThen(@Param("color") String color, @Param("cottonPart") Long cottonPart);
+
     @Query("select sum(quantity)" +
             " from Socks" +
             " where color = :color " +
