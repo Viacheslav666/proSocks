@@ -19,7 +19,6 @@ public class SocksController {
 
     /**
      *Регистрирует приход носков на склад.
-
      */
      @PostMapping("/income")
     public void addSocks(@RequestBody SocksDTO socksDTO){
